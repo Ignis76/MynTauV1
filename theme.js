@@ -1,7 +1,6 @@
 (() => {
   'use strict';
-  const key = 'sai-theme';
-  const system = matchMedia('(prefers-color-scheme: dark)');
+  const key = 'myntau-theme';
   let preference;
   try { preference = localStorage.getItem(key); } catch {}
   function apply(theme) {
@@ -15,7 +14,7 @@
     const meta = document.querySelector('meta[name="theme-color"]');
     if (meta) meta.content = dark ? '#141e1b' : '#f2efe6';
   }
-  apply(preference === 'dark' || preference === 'light' ? preference : system.matches ? 'dark' : 'light');
+  apply(preference === 'dark' ? 'dark' : 'light');
   document.addEventListener('DOMContentLoaded', () => {
     apply(document.documentElement.dataset.theme);
     document.querySelectorAll('.theme-toggle').forEach(button => button.addEventListener('click', () => {
@@ -24,10 +23,9 @@
       try { localStorage.setItem(key, preference); } catch {}
     }));
   });
-  system.addEventListener('change', event => { if (!preference) apply(event.matches ? 'dark' : 'light'); });
   window.addEventListener('storage', event => {
     if (event.key !== key) return;
     preference = event.newValue;
-    apply(preference || (system.matches ? 'dark' : 'light'));
+    apply(preference === 'dark' ? 'dark' : 'light');
   });
 })();

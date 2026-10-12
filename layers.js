@@ -12,7 +12,7 @@
   document.querySelector('.lab-caption').textContent=d.caption;document.querySelector('.lab-description h3').innerHTML=d.title;document.querySelector('.lab-description p').textContent=d.text;
   document.querySelector('.lab-exterior').hidden=currentView!=='outside';
   document.querySelectorAll('[data-lab-plan]').forEach(p=>p.hidden=currentView!=='plan'||p.dataset.labPlan!==currentHouse);
-  document.querySelectorAll('[data-lab-house]').forEach(b=>{const active=b.dataset.labHouse===currentHouse;b.classList.toggle('active',active);b.setAttribute('aria-pressed',String(active));});
+  document.querySelectorAll('[data-lab-house]').forEach(b=>{const active=b.dataset.labHouse===currentHouse;b.classList.toggle('active',active);b.setAttribute('aria-pressed',String(active));b.querySelector('.house-choice-state').textContent=active?'Сейчас открыт':'Посмотреть';b.querySelector('.house-choice-arrow').textContent=active?'✓':'→';});
   document.querySelectorAll('[data-lab-view]').forEach(b=>{const active=b.dataset.labView===currentView;b.classList.toggle('active',active);b.setAttribute('aria-pressed',String(active));});
   stage.classList.remove('is-updating');requestAnimationFrame(()=>stage.classList.add('is-updating'));
  }

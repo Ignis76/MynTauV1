@@ -19,3 +19,18 @@
 /* Keep photo labels away from the curved top corners. */
 .edition .cabin-photo .badge{top:auto;left:22px;bottom:22px;right:auto;max-width:calc(100% - 100px);padding:10px 14px;border-radius:5px;background:#f5f4e6f2;color:#2b402e;font-size:13px;line-height:1.4;white-space:normal;text-wrap:balance;box-shadow:0 3px 18px #10221820}
 @media(max-width:520px){.edition .cabin-photo .badge{left:16px;bottom:20px;font-size:12px;padding:9px 12px;max-width:calc(100% - 94px)}}
+
+/* A compact closing invitation with a separate booking action. */
+.final-invite{padding:62px 0 28px}
+.final-invite .invite-layout{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:50px;align-items:center;margin:30px 0 45px;position:relative}
+.final-invite .invite-layout h2{font-size:clamp(48px,4.8vw,76px);font-weight:400;line-height:1.08;letter-spacing:-.045em;margin:0}
+.final-invite .invite-layout h2 em{display:inline-block;font:italic 400 1em/1.15 Georgia,serif;letter-spacing:-.045em;margin-top:3px}
+.final-invite .invite-action{padding-right:6vw}
+.final-invite .invite-action p{font-size:15px;line-height:1.7;color:#faeddbbf;margin-bottom:22px}
+.final-invite a.invite-button{display:inline-flex;align-items:center;gap:40px;background:#f5e7d1;color:#453527;border:1px solid #f5e7d1;border-radius:30px;padding:15px 23px;margin:0;font:500 15px/1.4 Onest,Arial,sans-serif;letter-spacing:0;white-space:nowrap;transition:background .2s,transform .2s}
+.final-invite a.invite-button>span{position:static;font:400 24px/1 Onest,Arial,sans-serif;transition:transform .2s}
+.final-invite a.invite-button:hover{background:#fff5e4;transform:translateY(-2px)}
+.final-invite a.invite-button:hover>span{transform:translate(2px,-2px)}
+.final-invite:before{opacity:.55;width:350px;height:350px;right:-80px;top:-160px}
+@media(max-width:800px){.final-invite{padding-top:45px}.final-invite .invite-layout{gap:30px;grid-template-columns:1fr;margin:25px 0 35px}.final-invite .invite-layout h2{font-size:clamp(43px,7vw,58px)}.final-invite .invite-action{padding:0;display:flex;align-items:center;justify-content:space-between;gap:25px}.final-invite .invite-action p{font-size:13px;margin:0}.final-invite a.invite-button{font-size:13px;padding:13px 20px;gap:23px}}
+@media(max-width:520px){.final-invite .invite-layout h2{font-size:clamp(37px,9.6vw,48px)}.final-invite .invite-action{display:block}.final-invite .invite-action p{font-size:14px;margin-bottom:20px}.final-invite a.invite-button{font-size:14px;padding:14px 22px;gap:35px}.final-invite .final-meta{font-size:8px;letter-spacing:.7px;gap:15px;flex-wrap:wrap}}
